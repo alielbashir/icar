@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  producer:
+    build: producer/
+
+  broker:
+    image: rabbitmq:3.9.13
+
+  backend:
+    build: backend/
+  
+  frontend:
+    build: frontend/
+    ports:
+      - "8080:8080"
+
+  db:
+    image: postgres:14.2-alpine
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  cache:
+    image: redis:6.2.6-alpine
