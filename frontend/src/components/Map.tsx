@@ -15,8 +15,6 @@ const Map = (props: mapProps) => {
 
     return (
         <div className="map">
-            <h2 className="map-h2">Icar</h2>
-
             <div className="google-map">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: env.MAPS_API_KEY }}
