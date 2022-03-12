@@ -1,7 +1,6 @@
-import './App.css';
-import Map from './components/Map';
-import { DefaultPalette, IStackItemStyles, IStackStyles, Stack } from '@fluentui/react';
-
+import "./App.css";
+import Map from "./components/Map";
+import { DefaultPalette, IStackStyles, Stack } from "@fluentui/react";
 
 // Styles definition
 const stackStyles: IStackStyles = {
@@ -10,22 +9,21 @@ const stackStyles: IStackStyles = {
   },
 };
 
-
 const location = {
-  address: 'Stockholm, Sweden',
+  address: "Stockholm, Sweden",
   lat: 59.315743484542196,
   lng: 18.208967997981468,
-}
+};
 
 function App() {
   return (
     <div className="App">
       <Stack horizontal styles={stackStyles}>
-        <Stack.Item grow={2} >
+        <Stack.Item grow={2}>
           <Map location={location} zoomLevel={11} />
         </Stack.Item>
       </Stack>
-    </div >
+    </div>
   );
 }
 
