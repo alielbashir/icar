@@ -7,41 +7,7 @@
 }
 
 .google-map {
-  width: 100%;
-  height: 60vh;
+  height: 100vh;
+  width: auto;
 }
 
-.pin {
-  display: flex;
-  align-items: center;
-  width: 180px;
-  color: var(--main-blue);
-}
-
-.pin-icon {
-  font-size: 4rem;
-}
-
-.pin-text {
-  font-size: 1.3em;
-}
-
-@media screen and (min-width: 799px) {
-  .google-map {
-    height: 100vh;
-    width: auto;
-  }
-
-  /* .map-h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-    } */
-
-  .pin {
-    width: 15vw;
-  }
-
-  .pin-icon {
-    font-size: 10vw;
-  }
-}
