@@ -1,6 +1,12 @@
 import "./App.css";
 import Map from "./components/Map";
-import { DefaultPalette, IStackStyles, Stack } from "@fluentui/react";
+import {
+  DefaultPalette,
+  IStackStyles,
+  Stack,
+  StackItem,
+} from "@fluentui/react";
+import Sidebar from "./components/Sidebar";
 
 // Styles definition
 const stackStyles: IStackStyles = {
@@ -19,7 +25,10 @@ function App() {
   return (
     <div className="App">
       <Stack horizontal styles={stackStyles}>
-        <Stack.Item grow={2}>
+        <StackItem grow>
+          <Sidebar />
+        </StackItem>
+        <Stack.Item grow={6}>
           <Map location={location} zoomLevel={11} />
         </Stack.Item>
       </Stack>
