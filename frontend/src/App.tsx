@@ -8,6 +8,9 @@ import {
 } from "@fluentui/react";
 import Sidebar from "./components/Sidebar";
 
+import Login from "./components/Login/Login";
+import { useState } from "react";
+
 // Styles definition
 const stackStyles: IStackStyles = {
   root: {
@@ -22,6 +25,12 @@ const location = {
 };
 
 function App() {
+  const [token, setToken] = useState("");
+
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
+
   return (
     <div className="App">
       <Stack horizontal styles={stackStyles}>
