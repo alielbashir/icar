@@ -2,23 +2,51 @@
   "cars": [
     {
       "id": 1,
-      "locations": [{ "lat": 47.4544, "lng": 12.4343 }]
+      "locations": [
+        {
+          "lat": 47.4544,
+          "lng": 12.4343
+        }
+      ]
     },
     {
       "id": 22,
-      "locations": [{ "lat": 47.4644, "lng": 12.4243 }]
+      "locations": [
+        {
+          "lat": 47.4644,
+          "lng": 12.4243
+        }
+      ]
     },
     {
       "id": 55,
-      "locations": [{ "lat": 47.4444, "lng": 12.4443 }]
+      "locations": [
+        {
+          "lat": 47.4444,
+          "lng": 12.4443
+        }
+      ]
     },
     {
       "id": 43,
-      "locations": [{ "lat": 47.4744, "lng": 12.4543 }]
+      "locations": [
+        {
+          "lat": 47.4744,
+          "lng": 12.4543
+        }
+      ]
     },
     {
       "id": 59,
-      "locations": [{ "lat": 47.4844, "lng": 12.4643 }]
+      "locations": [
+        {
+          "lat": 47.4844,
+          "lng": 12.4643
+        }
+      ]
     }
-  ]
+  ],
+  "login": {
+    "token": "3423523"
+  }
 }
