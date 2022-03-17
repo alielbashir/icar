@@ -24,13 +24,7 @@ const location = {
   lng: 18.208967997981468,
 };
 
-// const setToken = (userToken: string) => {
-//   sessionStorage.setItem("token", JSON.stringify(userToken));
-// };
-
-// const getToken = () => {};
-
-function App() {
+const App = () => {
   const { token, setToken } = useToken();
 
   if (!token) {
@@ -49,6 +43,6 @@ function App() {
       </Stack>
     </div>
   );
-}
+};
 
 export default App;
