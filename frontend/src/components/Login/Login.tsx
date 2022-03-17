@@ -1,9 +1,10 @@
-import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { FormEvent, useState } from "react";
 import "./Login.css";
 import env from "react-dotenv";
+import { Token } from "../App/App.types";
 
 interface LoginProps {
-  setToken: Dispatch<SetStateAction<string>>;
+  setToken: (token: Token) => void;
 }
 
 interface Credentials {

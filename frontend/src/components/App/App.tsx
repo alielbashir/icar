@@ -9,7 +9,7 @@ import {
 import Sidebar from "../Sidebar/Sidebar";
 
 import Login from "../Login/Login";
-import { useState } from "react";
+import useToken from "./useToken";
 
 // Styles definition
 const stackStyles: IStackStyles = {
@@ -31,7 +31,7 @@ const location = {
 // const getToken = () => {};
 
 function App() {
-  const [token, setToken] = useState("");
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />;
