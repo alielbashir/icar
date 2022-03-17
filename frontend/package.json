@@ -20,6 +20,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "api": "json-server testdb.json -p 3333 --delay 1500",
     "start": "react-dotenv && react-scripts start",
     "build": "react-dotenv && react-scripts build",
     "test": "react-scripts test",
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.5",
+    "json-server": "^0.17.0",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.11.0",
