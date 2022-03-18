@@ -30,6 +30,7 @@ services:
     image: postgres:latest
     restart: unless-stopped
     volumes:
+      - ../scripts:/docker-entrypoint-initdb.d
       - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
