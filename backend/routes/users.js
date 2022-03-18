@@ -28,11 +28,6 @@ router.post("/login", async (req, res) => {
       });
       return
     }
-    // const date =Date.now()
-   
-    // await databaseClient.query(
-    //   `INSERT INTO "dates" ("user_id", "timestamp")  
-    //    VALUES ($1, $2)`, [userData.id, date]); 
     
     const token = jwt.sign(
       {
