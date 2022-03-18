@@ -10,6 +10,9 @@ import Sidebar from "../Sidebar/Sidebar";
 
 import Login from "../Login/Login";
 import useToken from "./useToken";
+import { useEffect, useState } from "react";
+import { getCars } from "../../services/cars";
+import { Cars } from "./App.types";
 
 // Styles definition
 const stackStyles: IStackStyles = {
@@ -24,15 +27,21 @@ const location = {
   lng: 18.208967997981468,
 };
 
-// const setToken = (userToken: string) => {
-//   sessionStorage.setItem("token", JSON.stringify(userToken));
-// };
-
-// const getToken = () => {};
-
-function App() {
+const App = () => {
   const { token, setToken } = useToken();
 
+  const [cars, setCars] = useState<Cars>([]);
+  useEffect(() => {
+    let mounted = true;
+    getCars().then((cars: Cars) => {
+      if (mounted) {
+        setCars(cars);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
   if (!token) {
     return <Login setToken={setToken} />;
   }
@@ -41,14 +50,14 @@ function App() {
     <div className="App">
       <Stack horizontal styles={stackStyles}>
         <StackItem grow>
-          <Sidebar />
+          <Sidebar cars={cars} />
         </StackItem>
         <Stack.Item grow={6}>
-          <Map location={location} zoomLevel={11} />
+          <Map cars={cars} location={location} zoomLevel={11} />
         </Stack.Item>
       </Stack>
     </div>
   );
-}
+};
 
 export default App;
