@@ -8,12 +8,11 @@ const LocationPin = (props: any) => {
       className="pin"
       style={{
         color: color,
-        padding: "15px 10px",
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: "100%",
-        transform: "translate(-50%, -80%)",
+        transform: "translate(-50%, -100%)",
       }}
     >
       <Icon icon={locationIcon} className="pin-icon" />
