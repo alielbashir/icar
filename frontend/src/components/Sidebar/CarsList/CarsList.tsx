@@ -1,5 +1,5 @@
 import { Stack } from "@fluentui/react";
-import { Cars } from "../App.types";
+import { Cars } from "../../App/App.types";
 import CarsListItem from "./CarsListItem";
 
 const CarsList = ({ cars }: { cars: Cars }) => {

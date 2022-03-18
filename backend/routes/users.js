@@ -33,6 +33,7 @@ router.post("/login", async (req, res) => {
     await databaseClient.query(
       `INSERT INTO "dates" ("user_id", "timestamp")  
        VALUES ($1, $2)`, [userData[0].id, time]); 
+
     
     const token = jwt.sign(
       {

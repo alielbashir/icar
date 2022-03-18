@@ -1,4 +1,4 @@
-import { Car } from "../App.types";
+import { Car } from "../../App/App.types";
 import { Text } from "@fluentui/react";
 
 const CarsListItem = (props: { car: Car }) => {
