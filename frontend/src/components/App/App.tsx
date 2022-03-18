@@ -53,7 +53,7 @@ const App = () => {
           <Sidebar cars={cars} />
         </StackItem>
         <Stack.Item grow={6}>
-          <Map location={location} zoomLevel={11} />
+          <Map cars={cars} location={location} zoomLevel={11} />
         </Stack.Item>
       </Stack>
     </div>
