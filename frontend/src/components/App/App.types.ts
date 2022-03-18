@@ -11,3 +11,7 @@ export interface Car {
 }
 
 export type Cars = Car[];
+
+export interface Token {
+  token: string;
+}

@@ -1,5 +1,5 @@
 import { Stack } from "@fluentui/react";
-import CarsList from "./CarsList";
+import CarsList from "./CarsList/CarsList";
 import SidebarHeader from "./SidebarHeader";
 
 const cars = [
