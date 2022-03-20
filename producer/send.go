@@ -61,11 +61,12 @@ func main() {
 	}
 	// read input
 	speed := flag.Float64("f", 1.0, "data sampling frequency in Hz")
-
+	server := flag.String("out", "mq", "output rabbitmq server")
 	// parse input flags
 	flag.Parse()
 
-	fmt.Printf("f = %f samples per minute\n", *speed)
+	fmt.Printf("f               = %f samples per minute\n", *speed)
+	fmt.Printf("rabbitmq server = %s:5672, \n", *server)
 	// open csv file
 
 	var path string
@@ -80,7 +81,7 @@ func main() {
 	}
 
 	// connect to server
-	conn, err := amqp.Dial("amqp://localhost:5672/")
+	conn, err := amqp.Dial("amqp://mq:5672/")
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 

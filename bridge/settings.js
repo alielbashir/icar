@@ -1,0 +1,1 @@
+export const MONGO_URL = "mongodb://mongodb:27017/icarDB";
