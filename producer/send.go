@@ -16,19 +16,19 @@ import (
 
 // struct representing car location
 type CarLocation struct {
-	Time int64   `json:"time"`
-	Id   uint16  `json:"id"`
-	Lat  float64 `json:"lat"`
-	Lon  float64 `json:"lon"`
+	Time  int64   `json:"time"`
+	CarId uint16  `json:"car_id"`
+	Lat   float64 `json:"lat"`
+	Lng   float64 `json:"lng"`
 }
 
 // function to read a csv record into a CarLocation object
 func (c *CarLocation) fromRecord(record []string) {
 	c.Time = time.Now().Unix()
 	c.Lat, _ = strconv.ParseFloat(record[1], 64)
-	c.Lon, _ = strconv.ParseFloat(record[2], 64)
+	c.Lng, _ = strconv.ParseFloat(record[2], 64)
 	tmp, _ := strconv.ParseUint(record[3], 10, 16)
-	c.Id = uint16(tmp)
+	c.CarId = uint16(tmp)
 }
 
 func failOnError(err error, msg string) {

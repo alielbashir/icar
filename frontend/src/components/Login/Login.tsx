@@ -13,7 +13,7 @@ interface Credentials {
 }
 
 const loginUser = async (credentials: Credentials) => {
-  return fetch(env.BACKEND_ADDRESS + "/login", {
+  return fetch(env.BACKEND_ADDRESS + "/users/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

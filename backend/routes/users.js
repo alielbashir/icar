@@ -13,28 +13,29 @@ router.post("/login", async (req, res) => {
   const password = req.body.password;
 
   try {
-    console.log(`awaiting db...`)
-    const data = await databaseClient.query(
+    console.log(`awaiting db...`);
+    const data = await databaseClient.clinet.query(
       `SELECT * FROM users WHERE username = $1 AND password = $2`,
       [username, password]
     ); //Verifying if the user exists in the database
-    console.log(`finished awaiting db`)
+    console.log(`finished awaiting db`);
 
     const userData = data.rows;
 
     if (userData.length === 0) {
       res.status(400).json({
-        error: "User is not registered",
+        error: "Incorrect credentials. Please try again",
       });
-      return
+      return;
     }
-    
-    const time = new Date().toISOString();
-    await databaseClient.query(
-      `INSERT INTO "dates" ("user_id", "timestamp")  
-       VALUES ($1, $2)`, [userData[0].id, time]); 
 
-    
+    const time = new Date().toISOString();
+    await databaseClient.clinet.query(
+      `INSERT INTO "dates" ("user_id", "timestamp")  
+       VALUES ($1, $2)`,
+      [userData[0].id, time]
+    );
+
     const token = jwt.sign(
       {
         user_id: userData[0].id,

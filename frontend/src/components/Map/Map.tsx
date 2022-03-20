@@ -22,15 +22,13 @@ const Map = (props: mapProps) => {
           center={location}
           defaultZoom={zoomLevel}
         >
-          {cars.map((car, index) =>
-            car.locations.map((location) => (
-              <LocationPin
-                color={colors[index]}
-                lat={location.lat}
-                lng={location.lng}
-              />
-            ))
-          )}
+          {cars.map((car) => (
+            <LocationPin
+              color={colors[car.car_id % 269]}
+              lat={car.lat}
+              lng={car.lng}
+            />
+          ))}
         </GoogleMapReact>
       </div>
     </div>
