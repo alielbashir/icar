@@ -1,0 +1,17 @@
+{
+  "name": "bridge",
+  "version": "1.0.0",
+  "description": "A service to forward rabbitmq messages to a redis db",
+  "type": "module",
+  "main": "server.js",
+  "author": "Ali Elbashir",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "mongodb": "^4.4.1",
+    "redis": "^4.0.4"
+  }
+}
