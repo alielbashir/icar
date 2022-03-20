@@ -46,7 +46,7 @@ services:
 
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    # network_mode: service:postgres
+    network_mode: service:postgres
 
     # Uncomment the next line to use a non-root user for all processes.
     # user: node
