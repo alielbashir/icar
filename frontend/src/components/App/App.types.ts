@@ -6,8 +6,9 @@ export interface Location {
 export type Locations = Location[];
 
 export interface Car {
-  id: number;
-  locations: Locations;
+  car_id: number;
+  lat: number;
+  lng: number;
 }
 
 export type Cars = Car[];

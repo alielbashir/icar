@@ -5,12 +5,8 @@ const CarsListItem = (props: { car: Car }) => {
   const { car } = props;
   return (
     <Text>
-      Car number {car.id}{" "}
-      {car.locations.length > 0
-        ? ` lat: ${car.locations[car.locations.length - 1].lat.toFixed(
-            5
-          )}, lng: ${car.locations[car.locations.length - 1].lng}`
-        : ""}
+      Car number {car.car_id} lat: {car.lat.toFixed(6)}, lng:{" "}
+      {car.lng.toFixed(6)}
     </Text>
   );
 };

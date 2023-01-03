@@ -3,19 +3,20 @@ import { connectToMongo } from "./db.js";
 
 // connect to mongodb
 const db = await connectToMongo("mongodb://mongodb:27017/icarDB");
+db.collection("locations").drop();
 console.log("mongoDB connection established!");
 
 const rabbitmqConnection = await connectToRabbitmq("amqp://mq:5672");
 console.log("rabbitmq connection established!");
 
 const handleMessage = async (message) => {
-  // console.log(`${message.content.toString()}`);
+  console.log(`${message.content.toString()}`);
   const record = JSON.parse(message.content);
   db.collection("locations").insertOne(record, (err) => {
     if (err) {
       console.log("Error inserting location record!");
     } else {
-      console.log(`Added a new location with id ${record.id}`);
+      console.log(`Added a new location with id ${record.car_id}`);
     }
   });
 };

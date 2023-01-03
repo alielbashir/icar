@@ -32,7 +32,11 @@ const App = () => {
 
   const [cars, setCars] = useState<Cars>([]);
   useEffect(() => {
+    if (!token) {
+      return;
+    }
     let mounted = true;
+
     getCars().then((cars: Cars) => {
       if (mounted) {
         setCars(cars);
@@ -41,7 +45,8 @@ const App = () => {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [token]);
+
   if (!token) {
     return <Login setToken={setToken} />;
   }
